@@ -110,9 +110,9 @@ final <- adjusted %>%
   summarise_all(.funs = c(mean="mean")) %>% 
   ungroup()
 
-name <- "final_output.csv"
+name <- "final_output.txt"
 
 # output to csv
-write.csv(final, here(name), row.names = FALSE)
+write.table(final, here(name), row.names = FALSE)
 
 message("Processing complete! find '", name, "' here: ", here(),'/', name)
